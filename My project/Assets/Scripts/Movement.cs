@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
    [SerializeField] InputAction thrust;
    [SerializeField] float thrustStrength = 500f;
+   [SerializeField] InputAction rotation;
    
 
    Rigidbody rb;
@@ -18,18 +19,36 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        ProcessThrust();
+        ProcessRotation();
+    }
+
+    void OnEnable()
+    {
+        thrust.Enable();
+        rotation.Enable();
+    }
+
+    void ProcessThrust()
+    {
         if (thrust.IsPressed())
         {
             rb.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
         }
     }
 
-    void OnEnable()
+    void ProcessRotation()
     {
-        thrust.Enable();
+        float rotationInput = rotation.ReadValue<float>();
+        if(rotationInput < 0)
+        {
+            transform.Rotate(Vector3.forward);
+        }
+        else if(rotationInput > 0)
+        {
+            transform.Rotate(Vector3.back);
+        }
     }
-
-
 
 
 }
