@@ -670,6 +670,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 56
       objectReference: {fileID: 0}
+    - target: {fileID: 5871927304759005944, guid: 2466d8d2216e2d24fbb048eddabb8810, type: 3}
+      propertyPath: rotationStrength
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6587778889965582952, guid: 2466d8d2216e2d24fbb048eddabb8810, type: 3}
       propertyPath: m_Name
       value: Player Rocket
