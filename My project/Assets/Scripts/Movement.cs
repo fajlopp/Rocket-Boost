@@ -10,12 +10,13 @@ public class Movement : MonoBehaviour
    [SerializeField] InputAction rotation;
    [SerializeField] float rotationStrength = 500f;
    
-
+   AudioSource engineSounds;
    Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        engineSounds = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -35,12 +36,21 @@ public class Movement : MonoBehaviour
         if (thrust.IsPressed())
         {
             rb.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
+            if (!engineSounds.isPlaying)
+            {
+                engineSounds.Play();
+            }
+            else
+            {
+                engineSounds.Stop();
+            }
         }
     }
 
     void ProcessRotation()
     {
         float rotationInput = rotation.ReadValue<float>();
+
         if(rotationInput < 0)
         {
             ApplyRotation(rotationStrength);
