@@ -40,10 +40,10 @@ public class Movement : MonoBehaviour
             {
                 engineSounds.Play();
             }
-            else
-            {
-                engineSounds.Stop();
-            }
+        }
+        else
+        {
+            engineSounds.Stop();
         }
     }
 
