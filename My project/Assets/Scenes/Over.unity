@@ -823,6 +823,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 7215986881190612196, guid: 2466d8d2216e2d24fbb048eddabb8810, type: 3}
+      propertyPath: landOnPad
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cb8a4090a3c072428bac578647bc7c1, type: 3}
+    - target: {fileID: 7215986881190612196, guid: 2466d8d2216e2d24fbb048eddabb8810, type: 3}
+      propertyPath: crashObstacle
+      value: 
+      objectReference: {fileID: 8300000, guid: 331e7e6299b6a0e42b83387e1eef2dc4, type: 3}
     - target: {fileID: 9096218281995816327, guid: 2466d8d2216e2d24fbb048eddabb8810, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.851
